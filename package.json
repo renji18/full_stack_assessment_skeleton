@@ -1,0 +1,19 @@
+{
+  "name": "full_stack_assessment_skeleton",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "docker-initial-up": "sudo docker-compose -f docker-compose.initial.yml up --build -d",
+    "docker-initial-down": "sudo docker-compose -f docker-compose.initial.yml down -v",
+    "docker-final-up": "sudo docker-compose -f docker-compose.final.yml up --build -d",
+    "docker-final-down": "sudo docker-compose -f docker-compose.final.yml down -v",
+    "frontend-start": "cd frontend && npm start",
+    "backend-start": "cd backend && npm run start"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
