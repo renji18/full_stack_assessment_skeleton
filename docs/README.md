@@ -269,6 +269,7 @@ docker-compose -f docker-compose.initial.yml up --build -d
 > **Execution**
 >
 > - You can use the script `npm run frontend` from `package.json` in the `root folder`, or you can first navigate to the 'frontend' folder via `cd frontend` and then run `npm start`.
+> - MAKE SURE THAT THE BACKEND SERVER IS UP AND RUNNING.
 
 ## 3. Backend API development on Node
 
@@ -368,6 +369,7 @@ docker-compose -f docker-compose.initial.yml up --build -d
 > **Execution**
 >
 > - You can use the script `npm run backend` from `package.json` in the `root folder`, or you can first navigate to the 'backend' folder via `cd backend` and then run `npm start`.
+> - MAKE SURE THAT THE DOCKER INSTANCE IS UP AND RUNNING.
 
 ## Submission Guidelines
 
