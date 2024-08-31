@@ -135,18 +135,19 @@ docker-compose -f docker-compose.initial.yml up --build -d
 
 ### solution
 
->- **Problem Overview**
+> **Problem Overview**
 >
->  - The goal was to migrate an existing user_home table to a new schema. The new schema involves creating separate tables for user, home, and a linking table user_home to associate users with homes. The main challenge was to preserve data integrity and ensure that the migration was smooth.
+> - The goal was to migrate an existing user_home table to a new schema. The new schema involves creating separate tables for user, home, and a linking table user_home to associate users with homes. The main challenge was to preserve data integrity and ensure that the migration was smooth.
 >
->- **Approach**
+> **Approach**
 >
->  - Backed up the existing database to avoid data loss during the migration.
->  - Created new tables `user` and `home` and redefined the `user_home` table to link users and homes with foreign keys.
->  - Extracted unique users and homes from the old `user_home` table and inserted them into the new `user` and `home` tables.
->  - Populated the new `user_home` table with mappings between `user_id` and `home_id`.
+> - Backed up the existing database to avoid data loss during the migration.
+> - Created new tables `user` and `home` and redefined the `user_home` table to link users and homes with foreign keys.
+> - Extracted unique users and homes from the old `user_home` table and inserted them into the new `user` and `home` tables.
+> - Populated the new `user_home` table with mappings between `user_id` and `home_id`.
 >
->- **Execution**
+> **Execution**
+>
 > - You can use the script `npm run docker-final-up` from `package.json` or you can run `docker-compose -f docker-compose.final.yml up --build -d`
 
 ## 2. React SPA
@@ -310,7 +311,30 @@ docker-compose -f docker-compose.initial.yml up --build -d
 
 ### solution
 
-> explain briefly your solution for this problem here
+> The server is running on `http://localhost` and listening on port `8000`
+>
+> **Problem Overview**
+>
+> - The task involves creating a backend service to manage interactions between a frontend application and a MySQL database, focusing on users and homes. The main challenges include implementing robust REST APIs for CRUD operations, ensuring data integrity with proper validation and error handling, managing relationships between users and homes through a join table, and supporting pagination for efficient data retrieval. Ensuring the APIs are idempotent and handling invalid data gracefully are also critical aspects of the implementation.
+>
+> **Approach**
+>
+> - `/user/find-all`
+>   - Description: Retrieves all homes related to a specific user. Supports pagination.
+>   - Method: `GET`
+> - `/home/find-by-user`
+>   - Description: Retrieves all users from the database.
+>   - Method: `GET`
+> - `/user/find-by-home`
+>   - Description: Retrieves all users related to a specific home.
+>   - Method: `GET`
+> - `/home/update-users`
+>   - Description: Updates the list of users associated with a specific home. This API is idempotent.
+>   - Method: `PUT`
+>
+> **Execution**
+>
+> - You can use the script `npm run backend` from `package.json` or you can first navigate to the 'backend' folder via `cd backend` and then run `npm start`.
 
 ## Submission Guidelines
 

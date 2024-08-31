@@ -10,8 +10,8 @@
     "docker-initial-down": "sudo docker-compose -f docker-compose.initial.yml down -v",
     "docker-final-up": "sudo docker-compose -f docker-compose.final.yml up --build -d",
     "docker-final-down": "sudo docker-compose -f docker-compose.final.yml down -v",
-    "frontend-start": "cd frontend && npm start",
-    "backend-start": "cd backend && npm run start"
+    "frontend": "cd frontend && npm start",
+    "backend": "cd backend && npm run start"
   },
   "author": "",
   "license": "ISC",
