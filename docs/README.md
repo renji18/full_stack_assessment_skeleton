@@ -258,7 +258,7 @@ docker-compose -f docker-compose.initial.yml up --build -d
 > - `State Management with Redux:`
 >   - Configured Redux slices to manage the state for `users`, `homes`, and the selected user for whom homes are being displayed. This allows centralized state management across the SPA.
 > - `Data Fetching with Axios`
->   - Integrated Axios to perform GET and PUT requests to the backend API for fetching user and home data, and updating user-home relationships.
+>   - Integrated Axios to perform `GET` and `PUT` requests to the backend API for fetching user and home data, and updating user-home relationships.
 >   - Implemented loading indicators using Redux state to inform the user when data is being fetched or updated.
 > - `Responsive Design with Tailwind CSS`
 >   - Designed the page layout using Tailwind CSS, ensuring it was responsive and functional across various devices.
