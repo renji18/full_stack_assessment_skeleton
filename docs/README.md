@@ -148,7 +148,7 @@ docker-compose -f docker-compose.initial.yml up --build -d
 >
 > **Execution**
 >
-> - You can use the script `npm run docker-final-up` from `package.json` or you can run `docker-compose -f docker-compose.final.yml up --build -d`
+> - You can use the script `npm run docker-final-up` from `package.json` in the `root folder`, or you can run `docker-compose -f docker-compose.final.yml up --build -d`
 
 ## 2. React SPA
 
@@ -268,7 +268,7 @@ docker-compose -f docker-compose.initial.yml up --build -d
 >
 > **Execution**
 >
-> - You can use the script `npm run frontend` from `package.json` or you can first navigate to the 'frontend' folder via `cd frontend` and then run `npm start`.
+> - You can use the script `npm run frontend` from `package.json` in the `root folder`, or you can first navigate to the 'frontend' folder via `cd frontend` and then run `npm start`.
 
 ## 3. Backend API development on Node
 
@@ -367,7 +367,7 @@ docker-compose -f docker-compose.initial.yml up --build -d
 >
 > **Execution**
 >
-> - You can use the script `npm run backend` from `package.json` or you can first navigate to the 'backend' folder via `cd backend` and then run `npm start`.
+> - You can use the script `npm run backend` from `package.json` in the `root folder`, or you can first navigate to the 'backend' folder via `cd backend` and then run `npm start`.
 
 ## Submission Guidelines
 
