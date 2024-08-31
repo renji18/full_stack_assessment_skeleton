@@ -9,9 +9,7 @@ export class UserService {
   // find all the users from the database
   async findAllUsers(response: Response): Promise<Response> {
     try {
-      const users = await this.prisma.user.findMany({
-        include: { _count: true },
-      });
+      const users = await this.prisma.user.findMany();
 
       return response
         .status(200)

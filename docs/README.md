@@ -245,7 +245,30 @@ docker-compose -f docker-compose.initial.yml up --build -d
 
 ### solution
 
-> explain briefly your solution for this problem here
+> The client is running on `http://localhost` and listening on port `3000`
+>
+> Stack used: Reactjs, Redux Toolkit, Tailwind CSS
+>
+> **Problem Overview**
+>
+> - To solve the problem, I utilized Redux for state management, Axios for data fetching, and Tailwind CSS for responsive UI design. I created a single page application using React that allows users to view and manage the homes associated with them and other users. The application includes features like a dropdown to select users, dynamically populated home cards, and a controlled "Edit User" modal for updating user-home relationships. Proper validation, error handling, and state updates ensure a seamless user experience, while leveraging data-fetching libraries improves performance.
+>
+> **Approach**
+>
+> - `State Management with Redux:`
+>   - Configured Redux slices to manage the state for `users`, `homes`, and the selected user for whom homes are being displayed. This allows centralized state management across the SPA.
+> - `Data Fetching with Axios`
+>   - Integrated Axios to perform GET and PUT requests to the backend API for fetching user and home data, and updating user-home relationships.
+>   - Implemented loading indicators using Redux state to inform the user when data is being fetched or updated.
+> - `Responsive Design with Tailwind CSS`
+>   - Designed the page layout using Tailwind CSS, ensuring it was responsive and functional across various devices.
+> - `Efficient Data Handling and UI Updates`
+>   - Ensured that after making updates via the API, the Redux store was updated, and the UI re-rendered to reflect these changes without a full page reload.
+>   - When users were added or removed from homes, the corresponding cards updated dynamically, providing immediate feedback to the user.
+>
+> **Execution**
+>
+> - You can use the script `npm run frontend` from `package.json` or you can first navigate to the 'frontend' folder via `cd frontend` and then run `npm start`.
 
 ## 3. Backend API development on Node
 
@@ -313,6 +336,8 @@ docker-compose -f docker-compose.initial.yml up --build -d
 
 > The server is running on `http://localhost` and listening on port `8000`
 >
+> Stack used: Nestjs, Prisma ORM
+>
 > **Problem Overview**
 >
 > - The task involves creating a backend service to manage interactions between a frontend application and a MySQL database, focusing on users and homes. The main challenges include implementing robust REST APIs for CRUD operations, ensuring data integrity with proper validation and error handling, managing relationships between users and homes through a join table, and supporting pagination for efficient data retrieval. Ensuring the APIs are idempotent and handling invalid data gracefully are also critical aspects of the implementation.
@@ -320,17 +345,25 @@ docker-compose -f docker-compose.initial.yml up --build -d
 > **Approach**
 >
 > - `/user/find-all`
->   - Description: Retrieves all homes related to a specific user. Supports pagination.
->   - Method: `GET`
-> - `/home/find-by-user`
 >   - Description: Retrieves all users from the database.
 >   - Method: `GET`
+> - `/home/find-by-user`
+>   - Description: Retrieves all homes related to a specific user. Supports pagination.
+>   - Method: `GET`
+>   - Query:
+>     - `userId`, indicates the id of specified user.
+>     - `page`, indicates the number of page.
 > - `/user/find-by-home`
 >   - Description: Retrieves all users related to a specific home.
 >   - Method: `GET`
+>   - Query:
+>     - `homeId`, indicates the id of specified home.
 > - `/home/update-users`
 >   - Description: Updates the list of users associated with a specific home. This API is idempotent.
 >   - Method: `PUT`
+>   - Body:
+>     - `home_id`, indicates the id of specified home.
+>     - `user_ids`, consists array of user ids to be associated with the home.
 >
 > **Execution**
 >
