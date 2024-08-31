@@ -247,7 +247,7 @@ docker-compose -f docker-compose.initial.yml up --build -d
 
 > The client is running on `http://localhost` and listening on port `3000`
 >
-> Stack used: Reactjs, Redux Toolkit, Tailwind CSS
+> Stack used: Reactjs, Redux Toolkit, Axios, Tailwind CSS
 >
 > **Problem Overview**
 >
